@@ -214,34 +214,28 @@ document.addEventListener('click', (event) => {
 
 const options = {
     method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': '53aae36a47msh6a57cf72cb3b288p11bd4ajsn065d268222f4',
-		'X-RapidAPI-Host': 'commodity-rates-api.p.rapidapi.com'
-	}
+    headers: {
+        'X-RapidAPI-Key': '99c8271435msh6cd0d182ea06065p12e5f7jsnf0e09f2ff64b',
+        'X-RapidAPI-Host': 'commodity-rates-api.p.rapidapi.com'
+    }
 };
 
-const cropNames = ['SUGAR', 'RICE', 'CORN', 'COTTON', 'MILK'];
-// const cropNames = ['WHEAT'];
+const cropNames = ['SUGAR', 'RICE', 'CORN', 'COTTON'];
 
-const cropPrices = [];
-Promise.all(cropNames.map(crop => {
-    return fetch(`https://commodity-rates-api.p.rapidapi.com/latest?base=USD&symbols=${crop}`, options)
-        .then(response => response.json())
-        .then(response => {
-            // Convert the price to USD
+fetch(`https://commodity-rates-api.p.rapidapi.com/latest?base=USD&symbols=${cropNames.join(',')}`, options)
+    .then(response => response.json())
+    .then(response => {
+        const cropPrices = cropNames.map(crop => {
             const priceInUSD = (1 / response.data.rates[crop]) * 80;
 
-            // Add the crop name and price to the array
-            cropPrices.push({
+            return {
                 name: crop,
                 price: priceInUSD
-            });
+            };
         });
-}))
-    .then(() => {
-        // Sort the crop prices by ascending order
+
         cropPrices.sort((a, b) => a.price - b.price);
-        // Create the bar chart
+
         const ctx = document.getElementById('myChart').getContext('2d');
         const myChart = new Chart(ctx, {
             type: 'bar',
