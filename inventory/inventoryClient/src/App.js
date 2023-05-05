@@ -13,6 +13,9 @@ function App() {
   const urlParams = new URLSearchParams(window.location.search);
   const info = urlParams.get('info');
   console.log(info);
+  console.log(info);
+  console.log(info);
+  console.log(info);
 
 
   const handleAddToCart = async (e) => {
