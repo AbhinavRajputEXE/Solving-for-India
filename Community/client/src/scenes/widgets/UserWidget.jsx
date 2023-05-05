@@ -92,7 +92,7 @@ const UserWidget = ({ userId, picturePath }) => {
         </Box>
       </Box>
 
-      <Divider />
+      {/* <Divider /> */}
 
       {/* THIRD ROW */}
       {/* <Box p="1rem 0">
