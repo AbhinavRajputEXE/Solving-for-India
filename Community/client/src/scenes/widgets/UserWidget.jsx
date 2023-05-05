@@ -110,7 +110,7 @@ const UserWidget = ({ userId, picturePath }) => {
         </FlexBetween>
       </Box> */}
 
-      <Divider />
+      {/* <Divider /> */}
 
       {/* FOURTH ROW */}
       {/* <Box p="1rem 0">
