@@ -12,14 +12,6 @@ function App() {
   const [cart, setCart] = useState([]);
   const [message, setMessage] = useState('');
 
-  const location = useLocation();
-  
-  useEffect(() => {
-    const searchParams = new URLSearchParams(location.search);
-    const sub = searchParams.get('sub');
-    console.log(sub); // logs the value of the sub parameter from the URL
-  }, [location.search]);
-
   const handleAddToCart = async (e) => {
     e.preventDefault();
     try {
