@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import './App.css';
 
 function App() {
@@ -10,13 +12,13 @@ function App() {
   const [cart, setCart] = useState([]);
   const [message, setMessage] = useState('');
 
-  const urlParams = new URLSearchParams(window.location.search);
-  const info = urlParams.get('info');
-  console.log(info);
-  console.log(info);
-  console.log(info);
-  console.log(info);
+  const location = useLocation();
 
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const sub = searchParams.get('sub');
+    console.log(sub); 
+  }, [location.search]);
 
   const handleAddToCart = async (e) => {
     e.preventDefault();
