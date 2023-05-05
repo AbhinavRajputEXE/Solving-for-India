@@ -130,7 +130,8 @@
     <div>
       <div class="cow"><img src="images/cow.png" alt=""></div>
       <h1 class="title">Kheti<span class="span">Fy</span></h1>
-      <p class="landingText">“<span class="span">Cultivate</span> the land, <span class="span">harvest</span> a future"</p>
+      <p class="landingText">“<span class="span">Cultivate</span> the land, <span class="span">harvest</span> a future"
+      </p>
     </div>
   </section>
 
@@ -175,7 +176,7 @@
               <button class="button" onclick="showChat()">Community Chat</button> -->
       <nav class=buttonDesign>
         <ul>
-          <li class="viewButton" >
+          <li class="viewButton">
             <div class="button-contenttt" id="inventoryButton">
               View Inventory
             </div>
@@ -308,12 +309,15 @@
           location.href = "https://khetify.netlify.app/index.html"
         }))
     }
-    
+
     const inventoryButton = document.getElementById('inventoryButton');
     inventoryButton.addEventListener('click', function(){
       window.open(`https://khetify-inventory.vercel.app/?${encodeURIComponent(sub.toString())}`,'mywindow');
     });
-    console.log(typeof(sub));
+    console.log(typeof (sub));
+    if (info == null) {
+      window.location.href = 'https://khetify.netlify.app/';
+    }
   </script>
 
 </body>
