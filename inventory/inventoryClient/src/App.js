@@ -14,13 +14,6 @@ function App() {
 
   const location = useLocation();
 
-  useEffect(() => {
-    const searchParams = new URLSearchParams(location.search);
-    const sub = searchParams.get('sub');
-    console.log(sub); 
-    console.log(sub);
-  }, [location.search]);
-
   const handleAddToCart = async (e) => {
     e.preventDefault();
     try {
