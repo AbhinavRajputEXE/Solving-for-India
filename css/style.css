@@ -305,6 +305,10 @@ a {
     animation-fill-mode: forwards;
 }
 
+.span{
+    color: #bfe500;
+}
+
 .landingText{
     animation-name: come;
     animation-duration: .5s;
