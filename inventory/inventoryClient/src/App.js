@@ -14,10 +14,9 @@ function App() {
   const [cart, setCart] = useState([]);
   const [message, setMessage] = useState('');
   
-  const ClientDetail = () => {
-    const params  = useParams();
-    return <div>Client stuff : {JSON.stringify(params)}</div>;
-  };
+  const params  = useParams();
+  console.log(params);
+
 
   const handleAddToCart = async (e) => {
     e.preventDefault();
