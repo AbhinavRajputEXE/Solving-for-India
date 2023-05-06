@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import './App.css';
+import { useLocation } from "react-router-dom"
 
 function App() {
   const [email, setEmail] = useState('');
@@ -11,7 +12,8 @@ function App() {
   const [newCropName, setNewCropName] = useState('');
   const [cart, setCart] = useState([]);
   const [message, setMessage] = useState('');
-  const params = new URLSearchParams(window.location.pathname);
+  const location = useLocation()
+  const params = new URLSearchParams(location.search)
   console.log(params);
 
   const handleAddToCart = async (e) => {
@@ -65,7 +67,9 @@ function App() {
 
     <div class="mainBody">
       <h1 class="mainTitle">Inventory</h1>
-      <p>{params.get("sub")}</p>;
+      <div className="url1">
+        {params.get("sub")}
+      </div>
       <div class="upper">
         <div class="section_1 section">
           <h1>Add to cart</h1>
