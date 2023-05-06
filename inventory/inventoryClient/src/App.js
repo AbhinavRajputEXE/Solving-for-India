@@ -70,7 +70,7 @@ function App() {
     
     <div class="mainBody">
       <h1 class="mainTitle">Inventory</h1>
-      <p>The current URL is: {email}</p>
+      {/* <p>The current URL is: {email}</p> */}
       <div class="upper">
         <div class="section_1 section">
           <h1>Add to cart</h1>
