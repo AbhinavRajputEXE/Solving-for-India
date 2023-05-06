@@ -21,7 +21,7 @@ function App() {
     e.preventDefault();
     try {
       const res = await axios.post('https://inventoryserver.onrender.com/addtocart', {
-        email,
+        currentUrl,
         cropName,
         amount
       });
@@ -34,7 +34,7 @@ function App() {
   const handleDeleteCrop = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.delete(`https://inventoryserver.onrender.com/deletecrop/${email}/${cropName}`);
+      const res = await axios.delete(`https://inventoryserver.onrender.com/deletecrop/${currentUrl}/${cropName}`);
       setMessage(res.data.message);
     } catch (error) {
       setMessage(error.response.data.message);
@@ -44,7 +44,7 @@ function App() {
   const handleGetCart = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.get(`https://inventoryserver.onrender.com/cart/${email}`);
+      const res = await axios.get(`https://inventoryserver.onrender.com/cart/${currentUrl}`);
       setCart(res.data.cart);
     } catch (error) {
       setMessage(error.response.data.message);
@@ -54,7 +54,7 @@ function App() {
   const handleUpdateCrop = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.put(`https://inventoryserver.onrender.com/updatecrop/${email}/${cropName}`, {
+      const res = await axios.put(`https://inventoryserver.onrender.com/updatecrop/${currentUrl}/${cropName}`, {
         newCropName,
         amount
       });
