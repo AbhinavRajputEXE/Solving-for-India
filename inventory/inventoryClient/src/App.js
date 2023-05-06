@@ -11,8 +11,8 @@ function App() {
   const [newCropName, setNewCropName] = useState('');
   const [cart, setCart] = useState([]);
   const [message, setMessage] = useState('');
-  const location = useLocation()
-  const params = new URLSearchParams(location.search)
+  const location = useLocation();
+  const params = new URLSearchParams(location.search);
   console.log(params);
 
   const handleAddToCart = async (e) => {
