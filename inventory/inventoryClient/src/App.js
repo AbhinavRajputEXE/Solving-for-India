@@ -4,9 +4,9 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import './App.css';
 
-const App = () => {
+const urlEx = () => {
   const params = new URLSearchParams(window.location.pathname);
-
+  console.log(params);
   return <p>{params.get("sub")}</p>;
 };
 
