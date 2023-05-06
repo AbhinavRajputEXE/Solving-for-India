@@ -11,8 +11,6 @@ function App() {
   const [newCropName, setNewCropName] = useState('');
   const [cart, setCart] = useState([]);
   const [message, setMessage] = useState('');
-  const [searchParams] = useSearchParams();
-  console.log(searchParams);
 
   const handleAddToCart = async (e) => {
     e.preventDefault();
@@ -65,7 +63,6 @@ function App() {
 
     <div class="mainBody">
       <h1 class="mainTitle">Inventory</h1>
-      <div className="App">{searchParams.sub}</div>
 
       <div class="upper">
         <div class="section_1 section">
