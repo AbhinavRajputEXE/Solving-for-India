@@ -15,6 +15,7 @@ function App() {
   const [message, setMessage] = useState('');
   
   
+  const currentUrl = window.location.href;
 
   const handleAddToCart = async (e) => {
     e.preventDefault();
@@ -67,7 +68,7 @@ function App() {
     
     <div class="mainBody">
       <h1 class="mainTitle">Inventory</h1>
-
+      <p>The current URL is: {currentUrl}</p>
       <div class="upper">
         <div class="section_1 section">
           <h1>Add to cart</h1>
