@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useEffect } from 'react';
-import { BrowserRouter as Router, useLocation } from 'react-router-dom';
+import { useSearchParams } from "react-router-dom";
 import './App.css';
 
 function App() {
@@ -11,9 +11,8 @@ function App() {
   const [newCropName, setNewCropName] = useState('');
   const [cart, setCart] = useState([]);
   const [message, setMessage] = useState('');
-  const location = useLocation();
-  const params = new URLSearchParams(location.search);
-  console.log(params);
+  const [searchParams] = useSearchParams();
+  console.log(searchParams);
 
   const handleAddToCart = async (e) => {
     e.preventDefault();
@@ -66,12 +65,7 @@ function App() {
 
     <div class="mainBody">
       <h1 class="mainTitle">Inventory</h1>
-      
-      <Router>
-        <div className="url1">
-          {params.get("sub")}
-        </div>
-      </Router>
+      <div className="App">{searchParams.sub}</div>
 
       <div class="upper">
         <div class="section_1 section">
