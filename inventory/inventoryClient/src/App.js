@@ -6,12 +6,12 @@ import { useParams } from 'react-router-dom';
 import { useSearchParams } from "react-router-dom";
 import './App.css';
 
-const User = () => {
-  const { id } = useParams();
-  return <div>User {id}</div>;
+const ClientDetail = () =>{
+  const params = useParams();
+  return <div>{JSON.stringify(params)}</div>;
 };
 
-export default User;
+export default ClientDetail;
 // function App() {
 //   const [email, setEmail] = useState('');
 //   const [cropName, setCropName] = useState('');
