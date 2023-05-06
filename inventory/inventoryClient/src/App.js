@@ -13,10 +13,11 @@ function App() {
   const [newCropName, setNewCropName] = useState('');
   const [cart, setCart] = useState([]);
   const [message, setMessage] = useState('');
+  var params;
+  const ClientDetail = () => {
+    params  = useParams();    
+  };
   
-  const params  = useParams();
-  console.log(params);
-
 
   const handleAddToCart = async (e) => {
     e.preventDefault();
@@ -66,8 +67,9 @@ function App() {
   };
 
   return (
-
+    
     <div class="mainBody">
+      <div>Client stuff : {JSON.stringify(params)}</div>
       <h1 class="mainTitle">Inventory</h1>
 
       <div class="upper">
