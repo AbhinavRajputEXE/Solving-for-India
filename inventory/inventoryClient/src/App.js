@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
+import { useSearchParams } from "react-router-dom";
 import './App.css';
 
 function App() {
@@ -69,6 +70,7 @@ function App() {
 
     <div class="mainBody">
       <h1 class="mainTitle">Inventory</h1>
+
       <div class="upper">
         <div class="section_1 section">
           <h1>Add to cart</h1>
@@ -159,9 +161,5 @@ function App() {
   );
 }
 
-function scrollToDiv() {
-  var div = document.getElementById("table");
-  div.scrollIntoView({behavior: "smooth"});
-}
 
 export default App;
