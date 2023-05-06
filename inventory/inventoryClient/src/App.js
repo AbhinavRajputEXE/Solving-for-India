@@ -3,7 +3,6 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import './App.css';
-import { useLocation } from "react-router-dom"
 
 function App() {
   const [email, setEmail] = useState('');
