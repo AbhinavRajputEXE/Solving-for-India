@@ -12,6 +12,13 @@ function App() {
   const [cart, setCart] = useState([]);
   const [message, setMessage] = useState('');
 
+  //code to extract url of this page
+  const location = useLocation();
+  const url = location.pathname;
+  console.log(url);
+  const urlArray = url.split('/');
+  const urlEmail = urlArray[2];
+
   const handleAddToCart = async (e) => {
     e.preventDefault();
     try {
