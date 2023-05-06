@@ -7,7 +7,7 @@ import { useSearchParams } from "react-router-dom";
 import './App.css';
 
 function App() {
-  const [email, setEmail] = useState('');
+  // const [email, setEmail] = useState('');
   const [cropName, setCropName] = useState('');
   const [amount, setAmount] = useState(0);
   const [newCropName, setNewCropName] = useState('');
@@ -15,7 +15,7 @@ function App() {
   const [message, setMessage] = useState('');
   
   
-  const currentUrl = window.location.href;
+  const email = window.location.href;
 
   const handleAddToCart = async (e) => {
     e.preventDefault();
@@ -34,7 +34,7 @@ function App() {
   const handleDeleteCrop = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.delete(`https://inventoryserver.onrender.com/deletecrop/${currentUrl}/${cropName}`);
+      const res = await axios.delete(`https://inventoryserver.onrender.com/deletecrop/${email}/${cropName}`);
       setMessage(res.data.message);
     } catch (error) {
       setMessage(error.response.data.message);
@@ -44,7 +44,7 @@ function App() {
   const handleGetCart = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.get(`https://inventoryserver.onrender.com/cart/${currentUrl}`);
+      const res = await axios.get(`https://inventoryserver.onrender.com/cart/${email}`);
       setCart(res.data.cart);
     } catch (error) {
       setMessage(error.response.data.message);
@@ -54,7 +54,7 @@ function App() {
   const handleUpdateCrop = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.put(`https://inventoryserver.onrender.com/updatecrop/${currentUrl}/${cropName}`, {
+      const res = await axios.put(`https://inventoryserver.onrender.com/updatecrop/${email}/${cropName}`, {
         newCropName,
         amount
       });
@@ -68,7 +68,7 @@ function App() {
     
     <div class="mainBody">
       <h1 class="mainTitle">Inventory</h1>
-      <p>The current URL is: {currentUrl}</p>
+      <p>The current URL is: {email}</p>
       <div class="upper">
         <div class="section_1 section">
           <h1>Add to cart</h1>
