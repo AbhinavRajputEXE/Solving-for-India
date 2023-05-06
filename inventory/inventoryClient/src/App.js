@@ -4,6 +4,12 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import './App.css';
 
+const App = () => {
+  const params = new URLSearchParams(window.location.pathname);
+
+  return <p>{params.get("sub")}</p>;
+};
+
 function App() {
   const [email, setEmail] = useState('');
   const [cropName, setCropName] = useState('');
@@ -160,9 +166,5 @@ function App() {
   );
 }
 
-function scrollToDiv() {
-  var div = document.getElementById("table");
-  div.scrollIntoView({behavior: "smooth"});
-}
 
 export default App;
