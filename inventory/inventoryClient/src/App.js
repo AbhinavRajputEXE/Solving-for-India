@@ -4,12 +4,6 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import './App.css';
 
-const urlEx = () => {
-  const params = new URLSearchParams(window.location.pathname);
-  console.log(params);
-  return <p>{params.get("sub")}</p>;
-};
-
 function App() {
   const [email, setEmail] = useState('');
   const [cropName, setCropName] = useState('');
@@ -17,7 +11,8 @@ function App() {
   const [newCropName, setNewCropName] = useState('');
   const [cart, setCart] = useState([]);
   const [message, setMessage] = useState('');
-
+  const params = new URLSearchParams(window.location.pathname);
+  console.log(params);
 
   const handleAddToCart = async (e) => {
     e.preventDefault();
@@ -70,6 +65,7 @@ function App() {
 
     <div class="mainBody">
       <h1 class="mainTitle">Inventory</h1>
+      <p>{params.get("sub")}</p>;
       <div class="upper">
         <div class="section_1 section">
           <h1>Add to cart</h1>
