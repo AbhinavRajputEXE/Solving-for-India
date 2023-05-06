@@ -21,7 +21,7 @@ function App() {
     e.preventDefault();
     try {
       const res = await axios.post('https://inventoryserver.onrender.com/addtocart', {
-        currentUrl,
+        email,
         cropName,
         amount
       });
@@ -73,9 +73,9 @@ function App() {
         <div class="section_1 section">
           <h1>Add to cart</h1>
           <form onSubmit={handleAddToCart}>
-            <label>
-              <input type="email" placeholder="Email" required value={email} onChange={(e) => setEmail(e.target.value)} />
-            </label>
+            {/* <label>
+              <input type="email" placeholder="Email" required value={email}  />
+            </label> */}
             <label>
               <input type="text" placeholder="Crop Name" required value={cropName} onChange={(e) => setCropName(e.target.value)} />
             </label>
@@ -89,9 +89,9 @@ function App() {
         <div class="section_2 section">
           <h1>Delete crop</h1>
           <form onSubmit={handleDeleteCrop}>
-            <label>
+            {/* <label>
               <input type="email" placeholder="Email" required value={email} onChange={(e) => setEmail(e.target.value)} />
-            </label>
+            </label> */}
             <label>
               <input type="text" placeholder="Crop name" required value={cropName} onChange={(e) => setCropName(e.target.value)} />
             </label>
@@ -104,9 +104,9 @@ function App() {
         <div class="section_3 section">
           <h1>View cart</h1>
           <form onSubmit={handleGetCart}>
-            <label>
+            {/* <label>
               <input type="email" placeholder="Email" required value={email} onChange={(e) => setEmail(e.target.value)} />
-            </label>
+            </label> */}
             <button type="submit">Submit</button>
           </form>
         </div>
@@ -114,9 +114,9 @@ function App() {
         <div class="section_4 section">
           <h1>Update crop</h1>
           <form onSubmit={handleUpdateCrop}>
-            <label>
+            {/* <label>
               <input type="email" placeholder="Email" required value={email} onChange={(e) => setEmail(e.target.value)} />
-            </label>
+            </label> */}
             <label>
               <input type="text" placeholder="Crop name" required value={cropName} onChange={(e) => setCropName(e.target.value)} />
             </label>
