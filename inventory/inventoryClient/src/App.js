@@ -15,7 +15,9 @@ function App() {
   const [message, setMessage] = useState('');
   
   
-  const email = window.location.href;
+  const url = window.location.href;
+  const email = url.substring(url.lastIndexOf('/') + 1);
+
 
   const handleAddToCart = async (e) => {
     e.preventDefault();
