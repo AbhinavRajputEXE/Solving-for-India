@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import './App.css';
 
 function App() {
@@ -11,6 +12,11 @@ function App() {
   const [newCropName, setNewCropName] = useState('');
   const [cart, setCart] = useState([]);
   const [message, setMessage] = useState('');
+  
+  const ClientDetail = () => {
+    const params  = useParams();
+    return <div>Client stuff : {JSON.stringify(params)}</div>;
+  };
 
   const handleAddToCart = async (e) => {
     e.preventDefault();
