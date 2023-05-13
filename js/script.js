@@ -215,7 +215,7 @@ document.addEventListener('click', (event) => {
 const options = {
     method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': 'b39a799b98mshdd12525f1088639p1aca4bjsn3bf585f385a6',
+		'X-RapidAPI-Key': 'd28c147338msh8d435cd2f11bc0fp10007ejsnd379278bb722',
 		'X-RapidAPI-Host': 'commodity-rates-api.p.rapidapi.com'
 	}
 };
