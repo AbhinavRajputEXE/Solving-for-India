@@ -56,7 +56,7 @@ const Navbar = () => {
             },
           }}
         >
-          Khetify
+          Twitter
         </Typography>
         {isNonMobileScreens && (
           <FlexBetween
